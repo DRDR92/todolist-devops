@@ -2,8 +2,8 @@ common:
   namespace: todoapp
 
 image:
-  repository: ikulyk404/todoapp
-  tag: "4.0.1"
+  repository: drdr92/todoapp
+  tag: "1.0.0"
 
 containerPort: 8080
 nodePort: 30007
