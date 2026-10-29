@@ -20,7 +20,7 @@ kubectl patch deployment metrics-server -n kube-system --type='json' \
 kubectl taint nodes -l app=mysql app=mysql:NoSchedule --overwrite
 
 # 5. Деплой чарта
-helm upgrade --install todoapp ./.infrastructure/helm-chart/todoapp --wait --timeout 10m
+helm upgrade --install todoapp ./.infrastructure/helm-chart/todoapp -f ./.infrastructure/helm-chart/todoapp/secrets.yaml --wait --timeout 10m
 
 # 6. Сохранение вывода
 kubectl get all,cm,secret,ing -A > output.log

@@ -12,10 +12,10 @@ config:
   PYTHONUNBUFFERED: "1"
 
 secrets:
-  SECRET_KEY: "@e2(yx)v&tgh3_s=0yja-i!dpebxsz^dg47x)-k&kq_3zf*9e*"
+  SECRET_KEY: ""
   DB_NAME: "app_db"
   DB_USER: "app_user"
-  DB_PASSWORD: "1234"
+  DB_PASSWORD: ""
   DB_HOST: "mysql-0.mysql.mysql.svc.cluster.local"
 
 resources:
@@ -61,10 +61,10 @@ mysql:
     repository: mysql
     tag: "8.0"
   secrets:
-    MYSQL_ROOT_PASSWORD: "1234"
+    MYSQL_ROOT_PASSWORD: ""
     MYSQL_DATABASE: "app_db"
     MYSQL_USER: "app_user"
-    MYSQL_PASSWORD: "1234"
+    MYSQL_PASSWORD: ""
   pvc:
     storage: 2Gi
   resources:

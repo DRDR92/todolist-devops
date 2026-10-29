@@ -14,11 +14,19 @@ Docker · Kubernetes (kind) · Helm · MySQL · Ingress NGINX · Metrics Server 
 - **App:** Deployment with HPA (2–5 replicas, CPU/memory based), NodePort and ClusterIP services, Ingress
 - **Database:** MySQL StatefulSet (2 replicas) as a Helm sub-chart, with persistent storage
 - **Scheduling:** node affinity, pod anti-affinity, taints and tolerations keep MySQL on dedicated nodes
-- **Security:** RBAC service account with read-only access to secrets
+- **Security:** RBAC service account with read-only access to secrets; credentials kept out of the repository
 
 ## Run locally
 
 Requirements: Docker, kind, kubectl, Helm.
+
+Create a secrets file from the template and set your own values:
+
+```bash
+cp .infrastructure/helm-chart/todoapp/secrets.example.yaml .infrastructure/helm-chart/todoapp/secrets.yaml
+```
+
+Then run:
 
 ```bash
 ./bootstrap.sh
@@ -41,5 +49,5 @@ bootstrap.sh                 One-command setup
 ## Roadmap
 
 - [ ] CI/CD with GitHub Actions: build and push my own Docker image
-- [ ] Move secrets out of values.yaml
+- [x] Move secrets out of values.yaml
 - [ ] Monitoring with Prometheus and Grafana
